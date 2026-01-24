@@ -1,0 +1,121 @@
+/* Navbar layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  position: relative;
+}
+
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Menu container with gradient border, blur, and shadow */
+.navbar-menu {
+  display: flex;
+  gap: 2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 500px;
+  background: rgba(32, 34, 36, 0.3); /* #202224 with opacity */
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  box-shadow: 0 0 1px rgba(38, 40, 46, 0.37);
+  backdrop-filter: blur(4px);
+}
+
+/* Gradient border using pseudo-element */
+.navbar-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 500px;
+  padding: 1px; /* thickness */
+  background: linear-gradient(90deg, #37393c, #37393c00);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.navbar-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: #f97316; /* hover orange */
+}
+
+/* Button styled as link */
+.navbar-button .btn-link {
+  border: 1px solid #fc881d8a;
+  color: #fc881d;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-button .btn-link:hover {
+  background: #fc881d;
+  color: #000;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s;
+}
+
+/* Animate hamburger */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #111;
+    border-radius: 0;
+    padding: 1rem;
+    display: none;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-button {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

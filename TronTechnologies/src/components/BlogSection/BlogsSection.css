@@ -1,0 +1,142 @@
+.blogs-section {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blogs-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.blogs-badge {
+  display: inline-block;
+  font-size: 14px;
+  padding: 6px 20px;
+  position: relative;
+  border: #ff5007 1px solid;
+  border-radius: 20px;
+  color: #ffffff;
+  border-bottom: linear-gradient(90deg, #fc640a 0%, #000000 50%, #ff7417 100%);
+  border-top: none;
+}
+
+.blogs-header h2 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.blogs-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #aaa;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Blog Cards */
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background: #111;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  background: #1a1a1a;
+}
+
+.blog-image {
+  height: 220px;
+  overflow: hidden;
+  border-top-right-radius: 40px; /* only top-right curve */
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.blog-card:hover .blog-image img {
+  transform: scale(1.05);
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-category {
+  display: block;
+  color: #fc640a;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.blog-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: color 0.3s;
+}
+
+.blog-card:hover h3 {
+  color: #d99f7b;
+}
+
+.blog-content button {
+  background: none;
+  border: none;
+  color: #fc640a;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.blog-content button:hover {
+  color: #d99f7b;
+}
+
+.blog-link {
+  color: #fc640a;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.blog-link:hover {
+  color: #d99f7b;
+  border: #d99f7b 1px solid;
+  padding: 10px;
+  border-radius: 25px;
+}
+.view-all-blogs {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.view-all-blog-link {
+  border: #fc640a 1px solid;
+  border-radius: 999px;
+  padding: 8px 24px;
+  color: #fc640a;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}

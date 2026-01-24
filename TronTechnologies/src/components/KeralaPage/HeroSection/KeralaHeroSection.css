@@ -1,0 +1,235 @@
+.kerala-hero {
+  background: #0b0b0b;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1.5rem 3rem;
+  position: relative;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/* top icon */
+.kerala-top-icon {
+  width: 40px;
+  margin: 0 auto 1rem;
+  display: block;
+  margin-left: 550px;
+  z-index: -1;
+}
+
+.kerala-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(to bottom, #ffffff, #999999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kerala-hero-subtitle {
+  max-width: 700px;
+  margin: 1rem auto 2.5rem;
+  font-size: 1rem;
+  color: #d1d5db;
+}
+
+.kerala-hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: #f97316;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  background: #1f1f1f;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* stack container */
+.kerala-stack-container {
+  position: relative;
+  max-width: 975px;
+  margin: 80px auto;
+  padding: 1.5rem 1.5rem;
+  background: #0e0e10;
+  border-radius: 100px;
+  border: #232329 1px solid;
+  border-bottom: none;
+}
+
+/* tech stack badges */
+.kerala-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.kerala-tech-stack span {
+  background: #1c1c1c;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #ccc;
+  border: #232329 1px solid;
+}
+
+/* scroll arrow */
+.scroll-down {
+  margin-top: 6rem;
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  color: #f97316;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+/* stats grid overlay */
+.kerala-stats-grid {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.stat-box {
+  background: #0e0e10;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stat-box h3 span {
+  color: #f97316;
+}
+
+.stat-box p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .kerala-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .kerala-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* icon recenters */
+  .kerala-top-icon {
+    margin: 0 auto 1rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* buttons stay in row */
+  .kerala-hero-buttons {
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* stats grid becomes stacked grid */
+  .kerala-stats-grid {
+    position: static; /* remove absolute */
+    transform: none;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .stat-box {
+    min-width: auto;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .stat-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .stat-box p {
+    font-size: 0.8rem;
+  }
+}
+
+/* optional: for tablets (>=480px), make 2 columns */
+@media (min-width: 480px) and (max-width: 768px) {
+  .kerala-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .kerala-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .kerala-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .kerala-top-icon {
+    margin: 0 auto 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 50px;
+  }
+
+  .kerala-hero-buttons {
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+  }
+  .kl-btn-arrow {
+    display: none;
+  }
+  .kera .btn-primary,
+  .btn-secondary {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
