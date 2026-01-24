@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import KeralaHeroSection from "../components/KeralaPage/HeroSection/KeralaHeroSection";
 import StrangerMessage from "../components/KeralaPage/StrangerMessage";
 import KlService from "../components/KeralaPage/KlService";
@@ -20,7 +17,9 @@ export default function KeralaPage() {
   return (
     <div>
       <Helmet>
-        <title>Best Website & App Developers in India | Tron Technologies</title>
+        <title>
+          Best Website & App Developers in India | Tron Technologies
+        </title>
         <meta
           name="description"
           content="Hire the best website designers, mobile app developers, and AI experts in India. Tron Technologies offers Flutter app development, UI/UX design, and smart web solutions built for growth."
@@ -40,7 +39,6 @@ export default function KeralaPage() {
         />
       </Helmet>
 
-      <Navbar />
       <KeralaHeroSection />
       <StrangerMessage />
       <KlService />
@@ -49,7 +47,6 @@ export default function KeralaPage() {
       <Testimonial />
       <Contact />
       <FAQ />
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "./HeroSection.css";
 import bgImage from "../../assets/hero-bg-new.png";
+import { handleChatClickCustom } from "../../utils/whatsapp";
 
 export default function HeroSection() {
   const stats = [
@@ -15,6 +16,7 @@ export default function HeroSection() {
       {/* Hero with background image */}
       <section
         className="hero"
+        id="home"
         style={{
           background: `url(${bgImage}) no-repeat center/cover`,
         }}
@@ -22,19 +24,29 @@ export default function HeroSection() {
         <div className="hero-inner container">
           {/* Left text */}
           <div className="hero-content">
-            <span className="hero-tag">be the future</span>
+            <span className="hero-tag">Be The Future</span>
             <h1>
               Be the Future of
               <br />
               <span>Technology</span>
             </h1>
             <p>
-              At Tron Technologies, we blend AI, design, and engineering to create digital solutions
-              that adapt, scale, and lead.
+              At Tron Technologies, we blend AI, design, and engineering to
+              create digital solutions that adapt, scale, and lead.
             </p>
             <div className="hero-cta">
               <img src="./btn-arrow.png" alt="arrow" className="btn-arrow" />
-              <button className="btn-primary"> Start Your Project</button>
+              <button
+                className="btn-primary"
+                onClick={() =>
+                  handleChatClickCustom(
+                    "Hey I would like to Start a project with Tron Technologies",
+                  )
+                }
+              >
+                {" "}
+                Start Your Project
+              </button>
               {/* <button className="btn-secondary">Case studies</button> */}
             </div>
           </div>

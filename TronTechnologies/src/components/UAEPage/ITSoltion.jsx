@@ -32,8 +32,13 @@ export default function ITSolution() {
       <div className="max-w-6xl mx-auto text-center mb-16">
         <p className="text-gray-400 text-sm tracking-wide">IT Solutions</p>
         <h2 className="text-2xl md:text-3xl font-bold max-w-3xl mx-auto mt-4 text-white">
-          Excellence Redefined: Unleashing Tailored Solutions for Your Success Journey.
+          The Excellence Defined by How We Work.
         </h2>
+        <p>
+          We specialize in providing reliable IT solutions with proper planning,
+          consideration and after sales services- such that your technology will
+          support your business rather than act as an obstacle to your business.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">

@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import blogPosts from "../utils/blogData";
 export default function BlogPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-      <Navbar />
-
       {/* Hero Section */}
       <section
-        className="relative text-white py-16"
+        className="relative text-white mt-20"
         // style={{
         //   backgroundImage: `url('/footer-bg.png')`,
         //   backgroundSize: "cover",
@@ -34,20 +33,26 @@ export default function BlogPage() {
               to={`/blogs/${post.id}`}
               className="block bg-stone-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-1"
             >
-              <img src={post.mainImage} alt={post.title} className="h-56 w-full object-cover" />
+              <img
+                src={post.mainImage}
+                alt={post.title}
+                className="h-56 w-full object-cover"
+              />
               <div className="p-6">
                 <span className="text-orange-500 text-sm font-semibold uppercase">
                   {post.category}
                 </span>
-                <h2 className="text-xl font-bold mt-2 mb-4 line-clamp-2">{post.title}</h2>
-                <span className="text-orange-500 font-medium hover:underline">Read →</span>
+                <h2 className="text-xl font-bold mt-2 mb-4 line-clamp-2">
+                  {post.title}
+                </h2>
+                <span className="text-orange-500 font-medium hover:underline">
+                  Read →
+                </span>
               </div>
             </Link>
           ))}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

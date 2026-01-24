@@ -1,9 +1,8 @@
 import React from "react";
 import "./Services.css";
 import { BsGlobe2, BsPalette, BsBag, BsWordpress } from "react-icons/bs";
-import mstore from "/mstore.png";
-import google from "/google.png";
-import mangcoding from "/mangcoding.png";
+
+import { handleChatClickCustom } from "../../utils/whatsapp";
 
 const Services = () => {
   const services = [
@@ -11,34 +10,34 @@ const Services = () => {
       icon: <BsGlobe2 className="text-2xl" />,
       title: "Mobile Application",
       description:
-        "To assist companies with engaging its users, we build and develop user-friendly mobile applications so they can stay in touch and convey messages to their audience anytime and from anywhere.",
-      image: "/web-service-image.png",
+        "Custom Android and iOS apps built for performance, usability, and long-term scalability.",
+      image: "/mobile.jpeg",
     },
     {
       icon: <BsPalette className="text-2xl" />,
       title: "UI/UX Design",
       description:
-        "Our design-first approach focuses on creating simple-to-use, beautiful designs worth a thousand words, where purpose meets beauty for maximum effect.",
-      image: "/web-service-image.png",
+        "User-centered design that improves usability, engagement, and conversion across all platforms.",
+      image: "/ui.jpeg",
     },
     {
       icon: <BsBag className="text-2xl" />,
       title: "Engineering Websites",
       description:
-        "Our engineering background means we will build fast, secure, and scalable websites that are built to work and grow with your business, from small to more comprehensive platforms.",
-      image: "/web-service-image.png",
+        "Robust, secure, and scalable websites engineered for speed, reliability, and growth.",
+      image: "/website.jpeg",
     },
     {
       icon: <BsWordpress className="text-2xl" />,
       title: "Intelligent Web App ",
       description:
-        "We develop intelligent, AI powered web apps that automate processes, react to user demands, and allow companies to respond and make better decisions.",
-      image: "/shopify-service-img.png",
+        "Smart web applications powered by automation and data to enhance efficiency and decision-making.",
+      image: "/web.jpeg",
     },
   ];
 
   return (
-    <section className="services-section relative">
+    <section className="services-section relative" id="services">
       <div className="why-us-title-container">
         <span className="line"></span>
         <p className="why-us-title">Our Services</p>
@@ -49,15 +48,22 @@ const Services = () => {
       <div className="service-content-container flex flex-col lg:flex-row gap-8 lg:gap-20 mt-8 lg:mt-20 px-4 lg:pl-64">
         <div className="w-full text-left lg:max-w-[500px]">
           <h3 className="mb-4 lg:mb-6 text-2xl sm:text-3xl lg:text-4xl font-light font-manrope">
-            Companies that can help you in developing your company for the future
+            Crafting the Future of Digital Products
           </h3>
           <p className="mb-3 w-full lg:w-2/3 text-base lg:text-lg text-gray-300">
-            Work in the IT field includes Web Design, App Design, UI/UX Design, Branding, Wordpress
-            & Shopify Development
+            We design and develop scalable web and mobile applications that help
+            businesses grow and adapt in a digital-first world.
           </p>
         </div>
-        <div className="lg:self-start lg:ml-36 lg:mr-20">
-          <button className="bg-white text-black px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
+        <div className="lg:self-start lg:ml-36 lg:mr-20 z-50">
+          <button
+            onClick={() =>
+              handleChatClickCustom(
+                "I would like to get a work started with Tron Technologies",
+              )
+            }
+            className="bg-white cursor-pointer text-black px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
+          >
             Get started
           </button>
         </div>
@@ -75,7 +81,10 @@ const Services = () => {
         <div className="max-w-[1000px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {services.map((service, index) => (
-              <div key={index} className="bg-[#2D2D2D42] service-card rounded-xl p-4 sm:p-6">
+              <div
+                key={index}
+                className="bg-[#2D2D2D42] service-card rounded-xl p-4 sm:p-6"
+              >
                 <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                   {/* Left side - Icon and Text */}
                   <div className="flex-1 w-full">
@@ -85,7 +94,9 @@ const Services = () => {
                     <h3 className="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-3 font-manrope leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
 
                   {/* Right side - Image */}
@@ -93,7 +104,7 @@ const Services = () => {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-32 h-40 sm:w-40 sm:h-50 rounded-lg object-cover"
+                      className="w-32 rounded-lg object-cover"
                     />
                   </div>
                 </div>

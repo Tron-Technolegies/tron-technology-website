@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import UaeHeroSection from "../components/UAEPage/UaeHero/UaeHeroSection";
-import Navbar from "../components/Navbar/Navbar";
 import StrangerMessage from "../components/KeralaPage/StrangerMessage";
 import UaeServicesSection from "../components/UAEPage/UaeServiceSection";
 import UaePortfolio from "../components/UAEPage/UaePortfolio";
 import UaeTestimonials from "../components/UAEPage/UaeTestimonials";
 import OurProcess from "../components/UAEPage/OurProcess";
 import ITSoltion from "../components/UAEPage/ITSoltion";
-import Footer from "../components/Footer/Footer";
 
 export default function UaePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Helmet>
@@ -34,7 +35,6 @@ export default function UaePage() {
         />
       </Helmet>
 
-      <Navbar />
       <UaeHeroSection />
       <StrangerMessage />
       <UaeServicesSection />
@@ -42,7 +42,6 @@ export default function UaePage() {
       <OurProcess />
       <UaeTestimonials />
       <ITSoltion />
-      <Footer />
     </div>
   );
 }

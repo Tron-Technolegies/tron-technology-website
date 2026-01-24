@@ -4,38 +4,76 @@ const Products = () => {
   const products = [
     {
       tag: "Development Project",
+      title: "Intermine Solutions (Germany)",
+      image: "/projects/intermine.jpg",
+      description:
+        "Miner Management Software for managing activities of miners",
+    },
+    {
+      tag: "Development Project",
+      title: "Dahab Mining APP (UAE)",
+      image: "/projects/mining.jpg",
+      description:
+        "Web + Mobile App for purchase and Analysis of Mining machines",
+    },
+    {
+      tag: "Development Project",
       title: "Handcar (UAE)",
-      image: "/projects/handcar.png",
+      image: "/projects/handcar.jpg",
       description: "Web + Mobile app for auto spare parts & services.",
     },
     {
       tag: "Development Project",
-      title: "Dahab Mining (UAE)",
-      image: "/projects/dahab.png",
+      title: "Dahab Miners (UAE)",
+      image: "/projects/dahab.jpg",
       description: "Blockchain-based mining ecosystem",
     },
     {
       tag: "Development Project",
       title: "Tron Academy (India)",
-      image: "/projects/tronacademy.png",
+      image: "/projects/academy.jpg",
       description: " E-learning platform with courses & community.",
     },
     {
       tag: "Development Project",
+      title: "Hire In (UAE)",
+      image: "/projects/hirein.jpg",
+      description: "A marketplace for hiring experts suited for your business",
+    },
+    {
+      tag: "Development Project",
       title: "EarthCraft (India)",
-      image: "/projects/earthcraft.png",
+      image: "/projects/earth.jpg",
       description: "Real estate showcase for premium properties",
     },
     {
       tag: "Development Project",
       title: "Precious (India)",
-      image: "/projects/precious.png",
+      image: "/projects/precious.jpeg",
       description: "Fashion & lifestyle eCommerce website.",
+    },
+    {
+      tag: "Development Project",
+      title: "Pizza Kebab Club (UK)",
+      image: "/projects/pizza.jpg",
+      description: "Pizza Shop website showcasing their various products",
+    },
+    {
+      tag: "Development Project",
+      title: "Collective Transportation (UAE)",
+      image: "/projects/collective.jpg",
+      description: "Transportation services for school, oil and staff",
+    },
+    {
+      tag: "Development Project",
+      title: "Signature D World (India)",
+      image: "/projects/signature.jpg",
+      description: "E-commerce for appliances and electronic equipments",
     },
   ];
 
   return (
-    <section className="services-section relative">
+    <section className="services-section relative" id="products">
       {/* Title Section */}
       <div className="why-us-title-container">
         <span className="line"></span>
@@ -50,8 +88,8 @@ const Products = () => {
             Our Product
           </h3>
           <p className="mb-3 w-full lg:w-2/3 text-base lg:text-lg text-gray-300">
-            help you to build website company that is modern, user friendly, good CEO, and Clean
-            design
+            help you to build website company that is modern, user friendly,
+            good CEO, and Clean design
           </p>
         </div>
         <div className="lg:self-start lg:ml-36 lg:mr-20">
@@ -70,15 +108,19 @@ const Products = () => {
       {/* Product Cards - Responsive */}
       <section className="relative mt-12 lg:mt-25 py-8 lg:py-16 px-4">
         <div className="max-w-[1000px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-14">
             {products.map((product, index) => (
               <div
                 key={index}
                 className="bg-[#2D2D2D42] rounded-xl overflow-hidden hover:bg-[#2D2D2D66] transition-colors"
               >
                 {/* Image */}
-                <div className="w-full h-48 sm:h-56 md:h-48 overflow-hidden">
-                  <img src={product.image} alt={product.title} className=" object-fill" />
+                <div>
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full overflow-hidden object-cover"
+                  />
                 </div>
 
                 {/* Text Content */}
@@ -89,7 +131,9 @@ const Products = () => {
                   <h3 className="text-white text-lg sm:text-xl font-bold mt-2 mb-2 font-manrope">
                     {product.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{product.description}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {product.description}
+                  </p>
                 </div>
               </div>
             ))}

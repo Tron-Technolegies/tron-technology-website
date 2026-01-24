@@ -67,7 +67,7 @@ const techCategories = [
 
 const TechStackSection = () => {
   return (
-    <section className="techstack-section">
+    <section className="techstack-section" id="techstack">
       <p className="subtitle">the tech stack that helps</p>
       <h2 className="title">MAXIMISE YOUR BUSINESS VALUE</h2>
 

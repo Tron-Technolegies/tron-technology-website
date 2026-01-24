@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll"; // ✅ Import react-scroll Link
+import { Link as Link2 } from "react-router-dom";
+import { handleChatClickCustom } from "../../utils/whatsapp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,30 +29,36 @@ const Navbar = () => {
   const navLinks = [
     { name: "Services", to: "services" },
     { name: "Industries", to: "products" },
-    { name: "Clients", to: "brands" },
+    { name: "Why Us", to: "whyus" },
     { name: "About us", to: "about" },
-    { name: "Insights", to: "blogs" },
+    { name: "Tech", to: "techstack" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-zinc-900/95 backdrop-blur-lg shadow-lg" : "bg-transparent"
+        scrolled
+          ? "bg-zinc-900/95 backdrop-blur-lg shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="navbar-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0 z-50">
-            <Link
-              to="home"
+            <Link2
+              to="/"
               smooth={true}
               duration={500}
               offset={-80}
               className="flex items-center group cursor-pointer"
             >
-              <img src="./logo.png" alt="Tron Technologies" className="h-10 w-auto" />
-            </Link>
+              <img
+                src="./logo.png"
+                alt="Tron Technologies"
+                className="h-10 w-auto"
+              />
+            </Link2>
           </div>
 
           {/* Desktop Navigation */}
@@ -75,15 +83,19 @@ const Navbar = () => {
 
           {/* CTA Button - Desktop */}
           <div className="hidden lg:block">
-            <Link
-              to="contact"
+            <button
               smooth={true}
               duration={500}
               offset={-80}
+              onClick={() =>
+                handleChatClickCustom(
+                  "Hello I would Like to Know about Tron Technologies",
+                )
+              }
               className="inline-flex items-center px-6 py-2.5 text-sm font-medium text-orange-500 border border-orange-500/40 rounded-xl hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/50 cursor-pointer"
             >
               Get in touch
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -135,16 +147,19 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="pt-4 px-4">
-              <Link
-                to="contact"
+              <button
                 smooth={true}
                 duration={500}
                 offset={-80}
-                onClick={() => setIsOpen(false)}
+                onClick={() =>
+                  handleChatClickCustom(
+                    "Hello I would Like to Know about Tron Technologies",
+                  )
+                }
                 className="block w-full text-center px-6 py-3 text-base font-medium text-orange-500 border border-orange-500/40 rounded-xl hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 cursor-pointer"
               >
                 Get in touch
-              </Link>
+              </button>
             </div>
           </nav>
         </div>

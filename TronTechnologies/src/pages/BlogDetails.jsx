@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import blogPosts from "../utils/blogData";
 export default function BlogDetails() {
   useEffect(() => {
@@ -14,8 +12,6 @@ export default function BlogDetails() {
 
   return (
     <>
-      <Navbar />
-
       <div className="bg-white text-black">
         {/* Hero Section */}
         <section
@@ -28,7 +24,9 @@ export default function BlogDetails() {
         >
           <div className="max-w-4xl mx-auto px-6 text-center">
             <span className="uppercase text-orange-400">{blog.category}</span>
-            <h1 className="text-4xl md:text-5xl font-bold my-4">{blog.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold my-4">
+              {blog.title}
+            </h1>
             <p className="text-gray-300">{blog.summary}</p>
             <div className="flex items-center justify-center gap-4 mt-6 text-gray-400">
               <span>By {blog.author}</span>
@@ -37,7 +35,11 @@ export default function BlogDetails() {
             </div>
             {/* Blog main image */}
             <div className="mt-8">
-              <img src={blog.mainImage} alt={blog.title} className="mx-auto rounded-lg shadow-lg" />
+              <img
+                src={blog.mainImage}
+                alt={blog.title}
+                className="mx-auto rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </section>
@@ -66,7 +68,13 @@ export default function BlogDetails() {
               <div key={sec.id} id={sec.id}>
                 <h2 className="text-2xl font-bold mb-4">{sec.heading}</h2>
                 <p className="text-gray-700 leading-7">{sec.content}</p>
-                {sec.image && <img src={sec.image} alt={sec.heading} className="mt-4 rounded-lg" />}
+                {sec.image && (
+                  <img
+                    src={sec.image}
+                    alt={sec.heading}
+                    className="mt-4 rounded-lg"
+                  />
+                )}
               </div>
             ))}
           </article>
@@ -79,11 +87,21 @@ export default function BlogDetails() {
             {blogPosts
               .filter((b) => b.id !== blog.id)
               .map((b) => (
-                <div key={b.id} className="bg-gray-800 shadow rounded-lg overflow-hidden">
-                  <img src={b.mainImage} alt={b.title} className="h-40 w-full object-cover" />
+                <div
+                  key={b.id}
+                  className="bg-gray-800 shadow rounded-lg overflow-hidden"
+                >
+                  <img
+                    src={b.mainImage}
+                    alt={b.title}
+                    className="h-40 w-full object-cover"
+                  />
                   <div className="p-4">
                     <h4 className="font-semibold">{b.title}</h4>
-                    <Link to={`/blogs/${b.id}`} className="text-orange-500 text-sm">
+                    <Link
+                      to={`/blogs/${b.id}`}
+                      className="text-orange-500 text-sm"
+                    >
                       Read →
                     </Link>
                   </div>
@@ -96,12 +114,14 @@ export default function BlogDetails() {
         <section className="bg-black text-white text-center py-20">
           <h2 className="text-3xl font-bold mb-4">Have a project in mind?</h2>
           <p className="mb-6">Let’s get to work</p>
-          <Link to="/contact" className="px-6 py-3 bg-orange-500 rounded-lg hover:bg-orange-600">
+          <Link
+            to="/contact"
+            className="px-6 py-3 bg-orange-500 rounded-lg hover:bg-orange-600"
+          >
             Contact Us
           </Link>
         </section>
       </div>
-      <Footer />
     </>
   );
 }
