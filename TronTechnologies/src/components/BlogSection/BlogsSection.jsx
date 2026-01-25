@@ -6,7 +6,7 @@ export default function BlogsSection() {
   const featuredBlogs = blogPosts.slice(0, 3);
 
   return (
-    <section className="blogs-section">
+    <section className="blogs-section" id="blogs">
       <div className="container">
         <div className="blogs-header">
           <div className="blogs-badge">Blogs</div>
@@ -14,8 +14,8 @@ export default function BlogsSection() {
             Explore insights for <br /> acceleration
           </h2>
           <p>
-            Over the years we've created a unique process that delivers exceptional results with
-            blazing-fast efficiency.
+            Over the years we've created a unique process that delivers
+            exceptional results with blazing-fast efficiency.
           </p>
         </div>
 

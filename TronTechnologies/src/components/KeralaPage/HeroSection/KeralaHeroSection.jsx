@@ -1,27 +1,41 @@
 import React from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import "./KeralaHeroSection.css";
+import { handleChatClickCustom } from "../../../utils/whatsapp";
 
 export default function KeralaHeroSection() {
   return (
     <section className="kerala-hero">
       <div className="kerala-hero-content">
         {/* top icon/image */}
-        <img src="/kl-hero-icon.svg" alt="decorative" className="kerala-top-icon" />
+        <img
+          src="/kl-hero-icon.svg"
+          alt="decorative"
+          className="kerala-top-icon"
+        />
 
         <h1 className="kerala-hero-title">
           Empowering You <br />
           in the Digital Age
         </h1>
         <p className="kerala-hero-subtitle">
-          We provide Seamless Digital Acceleration by boosting engineering and design capabilities,
-          improving processes, and delivering end-to-end digital products.
+          We provide Seamless Digital Acceleration by boosting engineering and
+          design capabilities, improving processes, and delivering end-to-end
+          digital products.
         </p>
 
         <div className="kerala-hero-buttons">
           <img src="./btn-arrow.png" alt="" className="kl-btn-arrow" />
-          <button className="btn-primary">Let’s Work Together</button>
-          <button className="btn-secondary">Case studies</button>
+          <button
+            className="btn-primary"
+            onClick={() =>
+              handleChatClickCustom(
+                "I would Like to work Together with Tron Technologies",
+              )
+            }
+          >
+            Let’s Work Together
+          </button>
         </div>
       </div>
 
@@ -44,7 +58,7 @@ export default function KeralaHeroSection() {
         <div className="kerala-stats-grid">
           <div className="stat-box">
             <h3>
-              60<span>+</span>
+              30<span>+</span>
             </h3>
             <p>Completed Projects</p>
           </div>

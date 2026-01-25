@@ -5,19 +5,25 @@ export default function OurProcess() {
     {
       id: 1,
       title: "Discover",
-      desc: "Every project starts with understanding the challenge and the landscape...",
+      desc: "Each project begins with the realization of the challenge and the landscape",
+      desc2:
+        "We also take time to find out about your business needs, users and technical limitations. This assists us to figure out the actual problem, not to make assumptions, and have a clear direction before we proceed",
       img: "/process1.png",
     },
     {
       id: 2,
       title: "Design",
-      desc: "...allowing us to design a solution that meets your needs...",
+      desc: "…so that we can make a design that will really suit you. ",
+      desc2:
+        "We develop ideas in structured designs using what we learn in the discovery process - balancing the usability, aesthetics, and functionality to develop experiences that are both intuitive and purposeful. ",
       img: "/process2.png",
     },
     {
       id: 3,
       title: "Develop",
-      desc: "...keeping development quality high and costs low...",
+      desc: "… maintaining quality of development and keeping the costs down",
+      desc2:
+        "We develop with clean and scalable code and practices. We are performance oriented, maintainable and long term value conscious, without an artificial level of complexity or exaggerated scheduling. ",
       img: "/process3.png",
     },
     {
@@ -32,11 +38,16 @@ export default function OurProcess() {
     <section className="bg-black text-white py-12 px-6 font-manrope">
       {/* Header */}
       <div className="max-w-4xl mx-auto text-center mb-10">
-        <p className="text-gray-400 uppercase text-xs tracking-wide">Our Process</p>
-        <h2 className="text-2xl md:text-3xl font-bold mt-2">Experience the Power of Process.</h2>
+        <p className="text-gray-400 uppercase text-xs tracking-wide">
+          Our Process
+        </p>
+        <h2 className="text-2xl md:text-3xl font-bold mt-2">
+          Feel the Strength of Process.
+        </h2>
         <p className="text-gray-300 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-          Instead of focusing just on the problem, we take the holistic approach so we can build a
-          solution that works end to end.
+          We are also holistic and end to end in our approach, i.e., we do not
+          just solve problems in isolation but make all the solutions to be
+          coordinated and well thought through.
         </p>
       </div>
 
@@ -62,9 +73,16 @@ export default function OurProcess() {
             </div>
 
             {/* Text */}
-            <div className="max-w-xs mt-4 md:mt-0">
-              <h3 className="text-orange-400 text-base font-semibold">{step.title}</h3>
-              <p className="text-gray-300 mt-1 text-sm leading-snug">{step.desc}</p>
+            <div className="max-w-sm mt-4 md:mt-0">
+              <h3 className="text-orange-400 text-base font-semibold">
+                {step.title}
+              </h3>
+              <p className="text-gray-300 mt-1 text-sm leading-snug">
+                {step.desc}
+              </p>
+              <p className="text-gray-300 mt-1 text-sm leading-snug">
+                {step.desc2}
+              </p>
             </div>
           </div>
         ))}

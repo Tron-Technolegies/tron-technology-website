@@ -26,11 +26,12 @@ const FAQ = () => {
   };
 
   return (
-    <section className="faq-section">
+    <section className="faq-section" id="faq">
       <h2>Frequently Asked Questions</h2>
       <p>
-        The purpose of a FAQ is generally to provide information on frequent questions or concerns.
-        However, the format is a useful means of organizing information and text.
+        The purpose of a FAQ is generally to provide information on frequent
+        questions or concerns. However, the format is a useful means of
+        organizing information and text.
       </p>
 
       <div className="faq-list">
@@ -40,7 +41,9 @@ const FAQ = () => {
             className={`faq-item ${active === index ? "active" : ""}`}
             onClick={() => toggleFAQ(index)}
           >
-            <span className="faq-number">{String(index + 1).padStart(2, "0")}</span>
+            <span className="faq-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
             <p>{faq.question}</p>
             <span className="faq-toggle">{active === index ? "-" : "+"}</span>
             {active === index && (
