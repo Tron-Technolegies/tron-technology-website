@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./FAQ.css";
+import "./Faq.css";
 
 const FAQ = () => {
   const [active, setActive] = useState(null);
