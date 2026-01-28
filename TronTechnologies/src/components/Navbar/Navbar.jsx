@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll"; // ✅ Import react-scroll Link
-import { Link as Link2 } from "react-router-dom";
+import { Link as Link2, useLocation, useNavigate } from "react-router-dom";
 import { handleChatClickCustom } from "../../utils/whatsapp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  function handleScroll(id) {
+    if (location.pathname === "/") {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }
 
   // Close menu when clicking outside on mobile
   useEffect(() => {
@@ -65,18 +71,13 @@ const Navbar = () => {
           <nav className="hidden lg:flex items-center">
             <div className="flex items-center gap-1 px-6 py-2.5 rounded-full bg-zinc-800/50 backdrop-blur-md border border-zinc-700/50 shadow-xl">
               {navLinks.map((link, index) => (
-                <Link
+                <button
                   key={index}
-                  to={link.to}
-                  smooth={true}
-                  duration={500}
-                  offset={-80}
-                  spy={true}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleScroll(link.to)}
                   className="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-700/50 rounded-full transition-all duration-200 cursor-pointer"
                 >
                   {link.name}
-                </Link>
+                </button>
               ))}
             </div>
           </nav>
@@ -133,18 +134,13 @@ const Navbar = () => {
         >
           <nav className="py-4 space-y-1 bg-zinc-900/95 backdrop-blur-lg rounded-b-2xl">
             {navLinks.map((link, index) => (
-              <Link
+              <button
                 key={index}
-                to={link.to}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                spy={true}
-                onClick={() => setIsOpen(false)}
+                onClick={() => handleScroll(link.to)}
                 className="block px-4 py-3 text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/50 rounded-lg transition-colors duration-200 cursor-pointer"
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
             <div className="pt-4 px-4">
               <button

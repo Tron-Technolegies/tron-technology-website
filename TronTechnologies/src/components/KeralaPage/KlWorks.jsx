@@ -121,9 +121,9 @@ export default function KlWorks() {
         </div>
       </div>
       {/* Bottom Heading Section */}
-      <div className="relative flex items-center justify-center max-w-3xl mx-auto mt-20">
+      <div className="relative flex  md:flex-row flex-col items-center justify-center gap-3 max-w-3xl mx-auto mt-20">
         {/* Left Text */}
-        <h2 className="text-3xl md:text-4xl font-bold mr-6 text-center md:text-left">
+        <h2 className="text-3xl md:text-4xl font-bold md:mr-6 text-center md:text-left">
           Take a Look <br /> at What
         </h2>
         {/* Line Left */}
@@ -137,7 +137,7 @@ export default function KlWorks() {
         {/* Line Right */}
         <div className="hidden md:block flex-1 h-[2px] bg-black mr-4"></div>
         {/* Right Text */}
-        <h2 className="text-3xl md:text-4xl font-bold ml-6 text-center md:text-right">
+        <h2 className="text-3xl md:text-4xl font-bold md:ml-6 text-center md:text-right">
           We Can Do <br /> For You
         </h2>
       </div>
