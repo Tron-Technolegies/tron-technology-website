@@ -1,12 +1,25 @@
 // Footer.jsx
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import "./Footer.css";
 import { handleChatClickCustom } from "../../utils/whatsapp";
 
 export default function Footer() {
   const location = useLocation();
   const isHome = location.pathname === "/";
+
+  const navigate = useNavigate();
+
+  function handleScroll(id) {
+    if (location.pathname === "/") {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }
 
   return (
     <section className={`footer ${isHome ? "footer-home" : "footer-default"}`}>
@@ -106,10 +119,25 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>Company</h4>
-          <ul>
-            <li>About Us</li>
-            <li>Why Us</li>
-            <li>Case Study</li>
+          <ul className="flex flex-col gap-2 items-start text-sm">
+            <button
+              className="cursor-pointer"
+              onClick={() => handleScroll("about")}
+            >
+              About Us
+            </button>
+            <button
+              className="cursor-pointer"
+              onClick={() => handleScroll("whyus")}
+            >
+              Why Us
+            </button>
+            <button
+              className="cursor-pointer"
+              onClick={() => handleScroll("products")}
+            >
+              Case Study
+            </button>
           </ul>
         </div>
       </div>
